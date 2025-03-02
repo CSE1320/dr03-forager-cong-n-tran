@@ -19,11 +19,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap"
+            rel="stylesheet"
+          />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-nunito ${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         {children}
-        <NavBar />
+        {/* <NavBar /> */}
       </body>
     </html>
   );
