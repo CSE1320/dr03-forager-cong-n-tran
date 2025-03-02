@@ -1,0 +1,28 @@
+"use client";
+import React from "react";
+import { useState } from "react";
+import { FaSearch, FaFilter } from "react-icons/fa";
+import FilterSetting from "./FilterSettings";
+
+
+const Search= ({filterData}) => {
+    const [showFilter, setShowFilter] = useState(false);
+
+    const toggleFilter = () => {
+        setShowFilter(!showFilter);
+    };
+    return (
+        <div className= "w-full h-12 flex items-center justify-end px-5">   
+            <div className="bg-white h-full flex justify-center items-center rounded-3xl flex-grow overflow-hidden">
+                <FaSearch color="gray" className="mr-2 ml-4 text-xl"/>
+                <input className="pl-4 flex-grow text-xl" type="text" placeholder="Search for a mushroom" />
+            </div>
+            <button onClick={toggleFilter} className="ml-2 text-xl">
+                <img src="icons/filter.png" alt="filter image" className="w-6 h-6" />
+            </button>
+            {showFilter && <FilterSetting filterData={filterData} onClose={toggleFilter} />}
+        </div>
+    );
+}
+export default Search;
+//border-2 border-blue-500 
