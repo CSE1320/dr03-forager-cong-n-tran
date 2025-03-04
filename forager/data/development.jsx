@@ -13,45 +13,104 @@ const warningMessage = {
 const filterData = [
     {
         title: "Tags",
-        pills: ["Favorites", "Recents"]
+        pills: [
+            { name: "Favorites", active: false },
+            { name: "Recents", active: false }
+        ]
     },
     {
         title: "Regions",
-        pills: ["Texas", "North America", "South America", "Asia", "Europe", "Africa"]
+        pills: [
+            { name: "Texas", active: false },
+            { name: "North America", active: false },
+            { name: "South America", active: false },
+            { name: "Asia", active: false },
+            { name: "Europe", active: false },
+            { name: "Africa", active: false }
+        ]
     },
     {
         title: "Category",
-        pills: ["Poisonous", "Medicinal", "Mythical", "Good for Broths"]
+        pills: [
+            { name: "Poisonous", active: false },
+            { name: "Medicinal", active: false },
+            { name: "Mythical", active: false },
+            { name: "Good for Broths", active: false }
+        ]
     }
 ];
 
 const mushroomData = [
     {
         image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-        title: "Mushroom",
-        description: "Mushrooms are a type of fungus that are enjoyed by many people around the world."
+        title: "Death Cap",
+        description: "One of the most poisonous mushrooms in the world.",
+        toxic: true,
+        scientificName: "Amanita phalloides",
+        filters: {
+            tags: ["Poisonous", "Deadly"],
+            regions: ["Europe", "North America"],
+            category: "Poisonous",
+            favorites: false,
+            recent: false
+        }
     },
     {
         image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-        title: "Mushroom",
-        description: "Mushrooms are a type of fungus that are enjoyed by many people around the world."
+        title: "Shiitake",
+        description: "A popular edible mushroom native to East Asia.",
+        toxic: false,
+        scientificName: "Lentinula edodes",
+        filters: {
+            tags: ["Edible", "Medicinal"],
+            regions: ["Asia"],
+            category: "Medicinal",
+            favorites: false,
+            recent: false
+        }
     },
     {
         image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-        title: "Mushroom",
-        description: "Mushrooms are a type of fungus that are enjoyed by many people around the world."
+        title: "Chanterelle",
+        description: "A highly prized edible mushroom.",
+        toxic: false,
+        scientificName: "Cantharellus cibarius",
+        filters: {
+            tags: ["Edible", "Gourmet"],
+            regions: ["North America", "Europe"],
+            category: "Good for Broths",
+            favorites: false,
+            recent: false
+        }
     },
     {
         image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-        title: "Mushroom",
-        description: "Mushrooms are a type of fungus that are enjoyed by many people around the world."
+        title: "Fly Agaric",
+        description: "A toxic mushroom known for its distinctive red cap with white spots.",
+        toxic: true,
+        scienceName: "Amanita muscaria",
+        filters: {
+            tags: ["Poisonous", "Mythical"],
+            regions: ["Europe", "Asia"],
+            category: "Mythical",
+            favorites: false,
+            recent: false
+        }
     },
     {
         image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-        title: "Mushroom",
-        description: "Mushrooms are a type of fungus that are enjoyed by many people around the world."
+        title: "Morel",
+        description: "A highly sought-after edible mushroom.",
+        toxic: false,
+        scienceName: "Morchella esculenta",
+        filters: {
+            tags: ["Edible", "Gourmet"],
+            regions: ["North America", "Europe"],
+            category: "Good for Broths",
+            favorites: false,
+            recent: false
+        }
     },
-
 ];
 // Two flavors of exporting:
 // export default dummyData; // Requires import dummyData from './data/development.js';

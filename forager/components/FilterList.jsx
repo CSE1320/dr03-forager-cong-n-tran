@@ -3,7 +3,7 @@ import PillList from "./PillList";
 import { IoMdClose } from "react-icons/io";
 
 
-const FilterList = ({filterData, onClose}) => {
+const FilterList = ({filterData, setFilters, setFilterMushrooms, onClose}) => {
     return (
         <div className="flex-col h-full w-[95%]">
             <div className="relative flex justify-center items-center h-12 w-full">
@@ -17,7 +17,13 @@ const FilterList = ({filterData, onClose}) => {
 
             <div className="flex flex-col gap-4">
                 {filterData.map((filter, index) => (
-                    <PillList key={index} header={filter.title} pillData={filter.pills} />
+                    <PillList 
+                        key={index} 
+                        header={filter.title} 
+                        pillData={filter.pills} 
+                        setFilters={setFilters} 
+                        setFilterMushrooms={setFilterMushrooms} 
+                    />
                 ))}
             </div>
         </div>
