@@ -27,7 +27,10 @@ export default function DashboardPage() {
               setFilters={setFilters} 
               setFilterMushrooms={setFilterMushrooms}
             />
-            <MushroomList mushrooms={filterMushrooms}/>
+            <MushroomList 
+              mushrooms={filterMushrooms}
+              setFilterMushrooms={setFilterMushrooms}
+            />
           </div>
         </BackgroundWhiteOverlay>
       </BackgroundScreen>

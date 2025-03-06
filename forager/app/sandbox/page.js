@@ -13,9 +13,15 @@ import UserGreeting from "@/components/UserGreeting";
 import MushroomList from "@/components/MushroomList";
 import { mushroomData } from "@/data/development";
 import MatchComponent from "@/components/MatchComponent";
+import PageHeader from "@/components/PageHeader";
+import WarningCard from "@/components/WarningCard";
+import ReportError from "@/components/ReportError";
+import NagivateButton from "@/components/NavigateButton";
+import BubbleText from "@/components/BubbleText";
 
 
 export default function SandboxPage() {
+  
   const mushroom = {
     image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
     title: "Death Cap",
@@ -40,15 +46,24 @@ export default function SandboxPage() {
       <UserGreeting name={"Chantelle"}/>
     <BackgroundScreen/> */}
       {/* <MushroomList mushrooms={mushroomData}/> */}
-      <Mushroom 
+      {/* <Mushroom 
         imagePath={mushroom.image}
         title={mushroom.title}
         description={mushroom.description}
         isToxic={mushroom.toxic}
         scientificName={mushroom.scientificName}
         card={false}
-      />
+      /> */}
       {/* <MatchComponent percent={90} toxic={true}/> */}
+      {/* <PageHeader title="Match Result"/> */}
+      {/* <WarningCard/> */}
+      {/* <ReportError/> */}
+      {/* <NagivateButton/> */}
+      <BubbleText 
+        header="Fast Facts" 
+        description={["Cap Diameter: 5-15cm", "Gill Color: White",  "Stem Color: White",  "Habitat: Temperate regions"]}
+        bgColor="bg-[#8E4A49]"
+      /> 
     </div>
   );
 }
