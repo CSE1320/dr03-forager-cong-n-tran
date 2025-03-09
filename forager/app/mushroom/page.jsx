@@ -9,31 +9,21 @@ import { useState } from 'react';
 import ReportError from '@/components/ReportError';
 import NagivateButton from '@/components/NavigateButton';
 import BubbleText from '@/components/BubbleText';
+import MushroomList from '@/components/MushroomList';
+import { mushroomData } from '@/data/development';
 
 
 export default function MushroomPage() {
 
   const [filters, setFilters] = useState("");
-  const mushroom = {
-    image: "https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg",
-    title: "Death Cap",
-    description: "One of the most poisonous mushrooms in the world.",
-    toxic: true,
-    scientificName: "Amanita phalloides",
-    filters: {
-        tags: ["Poisonous", "Deadly"],
-        regions: ["Europe", "North America"],
-        category: "Poisonous",
-        favorites: false,
-        recent: false
-    }
-  }
+  const matchResultMushroom = mushroomData[0];
+  const similarMushrooms = mushroomData.slice(1, 5);
   
 
   return (
     <BackgroundDefaultPage>
-      <PageHeader title="Match Results"/>
-      <div className="border-2 border-blue-500 flex flex-col items-center ml-16 mr-16 overflow-y-scroll ">
+      <PageHeader title="Match Results" destination="/dashboard"/>
+      <div className="border-2 border-blue-500 flex flex-col items-center ml-16 mr-16 overflow-y-scroll gap-5">
         <ReportError/>
         <BubbleText 
           header="WARNING" 
@@ -44,13 +34,13 @@ export default function MushroomPage() {
         /> 
         <NagivateButton name="Compare" destination="/comparison"/>
         <Mushroom 
-          imagePath={mushroom.image}
-          title={mushroom.title}
-          description={mushroom.description}
-          isToxic={mushroom.toxic}
+          imagePath={matchResultMushroom.image}
+          title={matchResultMushroom.title}
+          description={matchResultMushroom.description}
+          isToxic={matchResultMushroom.toxic}
           setMushrooms={setFilters}
-          scientificName={mushroom.scientificName}
-          card={false}
+          scientificName={matchResultMushroom.scientificName}
+          size='mushroom'
         />
         <BubbleText 
           header="Fast Facts" 
@@ -63,7 +53,10 @@ export default function MushroomPage() {
         <strong className='text-2xl text-[#324053]'>
           Similar Matches
         </strong>
-         
+        <MushroomList 
+          mushrooms={similarMushrooms}
+          isDashboard={true}
+        />
       </div>
      
       {/* <NavBar /> */}

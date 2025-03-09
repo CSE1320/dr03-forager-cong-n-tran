@@ -1,11 +1,20 @@
+import Link from "next/link";
 import React from "react";
 
-const NagivateButton = ({name = '', destination = ''}) => {
+const NagivateButton = ({name = '', destination = '', header=false}) => {
+    const buttonLocation = header ? "absolute left-0 bottom-0 ml-3": "w-full h-5 text-[#888787] flex justify-end ";
+    const imgSource = header ? "/icons/back.png": "/icons/gray_arrow-outlined.png";
+    const imgSize = header ? "w-8 h-16": "w-3 h-5";
     return (
-        <button className="w-full h-5  gap-2  text-[#888787] flex items-center justify-end">
-            <strong className="text-sm whitespace-nowrap">Compare</strong>
-            <img src="/icons/gray_arrow-outlined.png" alt="gray arrow icon" className="w-3 h-5"/>
-        </button>
+            <div className={buttonLocation}>
+                <Link href={destination} passHref>
+                    <div className="border-2 border-blue-500 flex flex-row gap-2">
+                        <strong className="text-sm whitespace-nowrap">{name}</strong>
+                        <img src={imgSource} alt="gray arrow icon" className={imgSize}/>
+                    </div>
+                </Link>
+            </div>
+
     );
 }
 export default NagivateButton;
