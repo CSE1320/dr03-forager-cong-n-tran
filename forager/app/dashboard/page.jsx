@@ -30,6 +30,7 @@ export default function DashboardPage() {
             <MushroomList 
               mushrooms={filterMushrooms}
               setFilterMushrooms={setFilterMushrooms}
+              isDashboard={true}
             />
           </div>
         </BackgroundWhiteOverlay>

@@ -18,6 +18,8 @@ import WarningCard from "@/components/WarningCard";
 import ReportError from "@/components/ReportError";
 import NagivateButton from "@/components/NavigateButton";
 import BubbleText from "@/components/BubbleText";
+import { similarMushrooms } from "@/data/development";
+import Table from "@/components/Table";
 
 
 export default function SandboxPage() {
@@ -36,6 +38,7 @@ export default function SandboxPage() {
         recent: false
     }
 }
+  const m = mushroomData[0]
   return (
     <div className="page flex justify-center items-center flex-row flex-nowrap bg-gray-200">
     {/* <Search filterData={filterData}/> */}
@@ -46,24 +49,29 @@ export default function SandboxPage() {
       <UserGreeting name={"Chantelle"}/>
     <BackgroundScreen/> */}
       {/* <MushroomList mushrooms={mushroomData}/> */}
-      {/* <Mushroom 
-        imagePath={mushroom.image}
-        title={mushroom.title}
-        description={mushroom.description}
-        isToxic={mushroom.toxic}
-        scientificName={mushroom.scientificName}
-        card={false}
-      /> */}
+      <Mushroom 
+        imagePath={m.image}
+        title={m.title}
+        description={m.description}
+        isToxic={m.toxic}
+        scientificName={m.scientificName}
+        card={true}
+        dashboard={true}
+        size="mushroom"
+      />
+      {/* <MushroomList mushrooms={similarMushrooms}/> */}
       {/* <MatchComponent percent={90} toxic={true}/> */}
       {/* <PageHeader title="Match Result"/> */}
       {/* <WarningCard/> */}
       {/* <ReportError/> */}
       {/* <NagivateButton/> */}
-      <BubbleText 
+      {/* <BubbleText 
         header="Fast Facts" 
         description={["Cap Diameter: 5-15cm", "Gill Color: White",  "Stem Color: White",  "Habitat: Temperate regions"]}
         bgColor="bg-[#8E4A49]"
-      /> 
+      />  */}
+      {/* <Table compareData={mushroomData}/> */}
+      
     </div>
   );
 }
