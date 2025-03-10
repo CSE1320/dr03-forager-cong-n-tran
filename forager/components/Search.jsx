@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import FilterSetting from "./FilterSettings";
 import { mushroomData } from "@/data/development";

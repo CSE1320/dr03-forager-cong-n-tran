@@ -1,16 +1,15 @@
 "use client";
-import Link from 'next/link';
+import BackgroundDefaultPage from '@/components/BackgroundDefaultPage';
+import BubbleText from '@/components/BubbleText';
+import Mushroom from '@/components/Mushroom';
+import MushroomList from '@/components/MushroomList';
 import NavBar from '../../components/NavBar';
 import PageHeader from '../../components/PageHeader';
-import BackgroundDefaultPage from '@/components/BackgroundDefaultPage';
-import Mushroom from '@/components/Mushroom';
-import WarningCard from '@/components/WarningCard';
-import { useState } from 'react';
 import ReportError from '@/components/ReportError';
 import NagivateButton from '@/components/NavigateButton';
-import BubbleText from '@/components/BubbleText';
-import MushroomList from '@/components/MushroomList';
-import { mushroomData } from '@/data/development';
+import { useState } from 'react';
+import { mushroomData, textColors } from '@/data/development';
+
 
 
 export default function MushroomPage() {
@@ -56,7 +55,7 @@ export default function MushroomPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
           </p>
           <div className='text-center'>
-            <strong className='text-2xl text-[#324053]'>
+            <strong className={`${textColors.default} text-2xl`}>
               Similar Matches
             </strong>
             <MushroomList 
@@ -73,8 +72,3 @@ export default function MushroomPage() {
     </div>
   );
 }
-
-
-  {/* <Link href="/comparison">
-    <button>Go to Mushroom Comparison Page</button>
-  </Link> */}

@@ -1,3 +1,4 @@
+import { backgroundColors } from "@/data/development";
 import React from "react";
 
 const MatchComponent = ({percent, toxic}) => {
@@ -15,7 +16,7 @@ const MatchComponent = ({percent, toxic}) => {
 
     return (
         <div className="flex flex-row items-center">
-            <div className="bg-[#FF5050] w-24 h-6 flex flex-row items-center rounded-sm gap-0.5 pl-0.5">
+            <div className={`${backgroundColors.warning} w-24 h-6 flex flex-row items-center rounded-sm gap-0.5 pl-0.5`}>
                 {matchIcon}
                 <h4 className="text-white font-bold text-left text-sm ">
                     {percent}% Match

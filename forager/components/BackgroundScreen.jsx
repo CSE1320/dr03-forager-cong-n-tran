@@ -1,8 +1,9 @@
 import React from "react";
+import { backgroundColors } from "@/data/development";
 
 const BackgroundScreen = ({children}) => {
     return (
-        <div className="bg-[#397367] flex justify-center items-center fixed inset-0">   
+        <div className={`flex justify-center items-center fixed inset-0 ${backgroundColors.dashboardHeader}`}>   
             <img 
                 src="/icons/mushroomBackground.png" 
                 alt="Forager Mushroom Background image" 

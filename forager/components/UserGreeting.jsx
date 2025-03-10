@@ -1,4 +1,5 @@
 import React from "react";
+import { backgroundColors } from "@/data/development";
 
 const UserGreeting = ({name}) => {
     const getInitial = (name) => {
@@ -14,7 +15,7 @@ const UserGreeting = ({name}) => {
                 </div>
             </div>
             <div className="pt-8">
-                <div className="bg-[#5F464B] text-2xl rounded-full flex items-center justify-center h-12 w-12 ">
+                <div className={`${backgroundColors.profile} text-2xl rounded-full flex items-center justify-center h-12 w-12`}>
                     {getInitial(name)}
                 </div>
             </div>

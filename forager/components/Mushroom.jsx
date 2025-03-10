@@ -1,11 +1,12 @@
 import React from "react";
-import MatchComponent from "./MatchComponent";
 import { FaPlus } from "react-icons/fa";
+import MatchComponent from "./MatchComponent";
 import MatchPercent from "./MatchPercent";
-import { mushroomData } from "@/data/development";
+import { mushroomData, textColors, backgroundColors } from "@/data/development";
+
 const Mushroom = ({ imagePath, title, description, scientificName, isToxic, setMushrooms, card = false, dashboard = false, size = 'dashboard', clickable = false}) => {
 
-    // importing css makes the css do weird things (sometimes render sometimes not)
+    // doing this bc importing css makes the css do weird things (sometimes render sometimes not)
     const mushroomSize = {
         dashboard: {
             containerClass: "w-32 h-40", 
@@ -71,14 +72,14 @@ const Mushroom = ({ imagePath, title, description, scientificName, isToxic, setM
             return (
                 <div className={`flex ${mushroomStyle.titleCardClass} w-full`}>
                     <div>
-                        <h1 className={`${mushroomStyle.titleClass} text-[#203B5F] rounded-md }`}>{title}</h1>
+                        <h1 className={`${mushroomStyle.titleClass} ${textColors.default} rounded-md }`}>{title}</h1>
                         <div className="self-start">
-                            <h3 className="text-xl text-[#203b5f] opacity-70">
+                            <h3 className={`${textColors} text-xl opacity-70`}>
                                 {scientificName} 
                             </h3>
                         </div>
                     </div>
-                    <button className="mt-3 mr-1 bg-[#579076] w-12 h-12 rounded-full flex justify-center items-center">
+                    <button className={`${backgroundColors.header} mt-3 mr-1 w-12 h-12 rounded-full flex justify-center items-center`}>
                         <FaPlus onClick={handleFavoriteClick} className="text-white text-2xl"/>
                     </button>
                 </div>
@@ -88,7 +89,7 @@ const Mushroom = ({ imagePath, title, description, scientificName, isToxic, setM
             return (
                 <div className={`flex ${mushroomStyle.titleCardClass} w-full`}>
                     <div>
-                        <h1 className={`${mushroomStyle.titleClass} text-[#203B5F] rounded-md }`}>{title}</h1>
+                        <h1 className={`${mushroomStyle.titleClass} ${textColors.default} rounded-md }`}>{title}</h1>
                     </div>
                 </div>
             )
@@ -123,24 +124,3 @@ const Mushroom = ({ imagePath, title, description, scientificName, isToxic, setM
     );
 }
 export default Mushroom;
-//"https://www.woodlandtrust.org.uk/media/48295/deathcap-fungi-amanita-phalloides-alamy-brgxfp-naturepix.jpg"
-//border-2 border-blue-500 
-
-
-// <div className={`flex ${titleCardClass} w-full`}>
-//     <div>
-//         <h1 className={`${titleClass} text-[#203B5F] rounded-md }`}>{title}</h1>
-//         {!card && (
-//             <div className="self-start">
-//                 <h3 className="text-xl text-[#203b5f] opacity-70">
-//                     {scientificName} 
-//                 </h3>
-//             </div>
-//         )}
-//     </div>
-//     {!card && (
-//         <button className="mt-3 mr-1 bg-[#579076] w-12 h-12 rounded-full flex justify-center items-center">
-//             <FaPlus onClick={onClick} className="text-white text-2xl"/>
-//         </button>
-//     )}
-// </div>

@@ -1,9 +1,9 @@
 "use client"; 
-import NavBar from '../../components/NavBar';
 import React from 'react';
+import NavBar from '../../components/NavBar';
 import NagivateButton from '@/components/NavigateButton';
-import { iconImagePaths } from '@/data/development';
 import Icon from '@/components/Icon';
+import { iconImagePaths } from '@/data/development';
 
 export default function PhotoSearchPage() {
   const backgroundImage = {backgroundImage: 'url(/icons/camera_screen.png)'}
@@ -30,7 +30,6 @@ export default function PhotoSearchPage() {
           <Icon imagePath={iconImagePaths.flip}/>
         </div>
       </div>
-      {/* <NavBar /> */}
     </div>
   );
 }
