@@ -2,10 +2,11 @@ import React from "react";
 import Mushroom from "./Mushroom";
 
 
-const MushroomList = ({mushrooms, setMushrooms, isDashboard}) => {
+const MushroomList = ({mushrooms, setMushrooms, isDashboard, type = "dashboard"}) => {
+    const format = type === "similar" ? "justify-between" : ""
     return (
         <div className="">
-            <ul className="border-2 border-blue-500 flex flex-wrap gap-1">
+            <ul className={`flex flex-wrap ${format} gap-2`}>
                 {mushrooms.map((mushroom, id) => (
                     <li key={id}>
                         <Mushroom 
@@ -17,7 +18,8 @@ const MushroomList = ({mushrooms, setMushrooms, isDashboard}) => {
                             setMushrooms={setMushrooms}
                             card={true}
                             dashboard={isDashboard}
-                            size="dashboard"
+                            size={type}
+                            clickable={true}
                         />
                     </li>
                 ))}

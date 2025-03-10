@@ -20,6 +20,9 @@ import NagivateButton from "@/components/NavigateButton";
 import BubbleText from "@/components/BubbleText";
 import { similarMushrooms } from "@/data/development";
 import Table from "@/components/Table";
+import Icon from "@/components/Icon";
+import { iconImagePaths } from "@/data/development";
+import MatchPrecent from "@/components/MatchPercent";
 
 
 export default function SandboxPage() {
@@ -57,7 +60,7 @@ export default function SandboxPage() {
         scientificName={m.scientificName}
         card={true}
         dashboard={true}
-        size="mushroom"
+        size="similar"
       />
       {/* <MushroomList mushrooms={similarMushrooms}/> */}
       {/* <MatchComponent percent={90} toxic={true}/> */}
@@ -71,7 +74,9 @@ export default function SandboxPage() {
         bgColor="bg-[#8E4A49]"
       />  */}
       {/* <Table compareData={mushroomData}/> */}
-      
+      {/* <Icon imagePath={iconImagePaths.flip}/> */}
+
+      {/* <MatchPrecent percent={90} isToxic={true}/> */}
     </div>
   );
 }
