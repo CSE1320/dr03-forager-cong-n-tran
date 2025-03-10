@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { backgroundColors, textColors } from "@/data/development";
 
 const Table = ({mushroom1, setMushroom1, mushroom2, setMushroom2}) => {
     const handleRemoveRow = (feature) => {
@@ -9,8 +10,8 @@ const Table = ({mushroom1, setMushroom1, mushroom2, setMushroom2}) => {
         setMushroom1(updatedMushroom1);
         setMushroom2(updatedMushroom2);
     };
-    const [editingFeature, setEditingFeature] = React.useState(null);
-    const [newDescription, setNewDescription] = React.useState("");
+    const [editingFeature, setEditingFeature] = useState(null);
+    const [newDescription, setNewDescription] = useState("");
 
     const handleDoubleClick = (feature) => {
         setEditingFeature(feature);
@@ -39,13 +40,13 @@ const Table = ({mushroom1, setMushroom1, mushroom2, setMushroom2}) => {
     return (
         <div className="flex justify-center items-center">
             <div className="bg-white shadow-lg py-2">
-                <table className="w-full border-collapse text-center table-fixed text-based text-[#203B5F]">
+                <table className={`${textColors.default} w-full border-collapse text-center table-fixed text-based `}>
                     <tbody>
                         {Object.keys(mushroom1.details).map((feature) => (
                             <tr key={feature} className="h-12"> 
                                 <td className="p-2 border-r-2 border-black relative">
                                     <button 
-                                        className="bg-[#D9D9D9] text-black text-xs rounded-full w-4 h-4 flex items-center justify-center absolute left-2 top-1/2 transform -translate-y-1/2"
+                                        className={`${backgroundColors.grey} text-black text-xs rounded-full w-4 h-4 flex items-center justify-center absolute left-2 top-1/2 transform -translate-y-1/2`}
                                         onClick={() => handleRemoveRow(feature)}
                                     >
                                         x

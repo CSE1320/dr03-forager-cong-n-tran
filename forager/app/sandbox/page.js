@@ -14,7 +14,6 @@ import MushroomList from "@/components/MushroomList";
 import { mushroomData } from "@/data/development";
 import MatchComponent from "@/components/MatchComponent";
 import PageHeader from "@/components/PageHeader";
-import WarningCard from "@/components/WarningCard";
 import ReportError from "@/components/ReportError";
 import NagivateButton from "@/components/NavigateButton";
 import BubbleText from "@/components/BubbleText";

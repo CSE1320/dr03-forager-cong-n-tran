@@ -1,8 +1,10 @@
 import React from "react";
+import { backgroundColors } from "@/data/development";
+
 
 const BackgroundDefaultPage = ({children}) => {
     return (
-        <div className="bg-[#F2F2F2] flex flex-col h-full overflow-y-scroll ">   
+        <div className={`${backgroundColors.default} flex flex-col h-full overflow-y-scroll`}>   
             {children}
         </div>
     );

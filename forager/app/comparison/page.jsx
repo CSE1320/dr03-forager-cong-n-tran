@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import BackgroundDefaultPage from '@/components/BackgroundDefaultPage';
 import PageHeader from '@/components/PageHeader';
 import ReportError from '@/components/ReportError';
@@ -7,7 +8,6 @@ import BubbleText from '@/components/BubbleText';
 import Mushroom from '@/components/Mushroom';
 import Table from '@/components/Table';
 import { mushroomData, yourMushroomData } from '@/data/development';
-import { useState } from 'react';
 
 export default function MushroomComparisonPage() {
 

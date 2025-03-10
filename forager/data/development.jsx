@@ -1,4 +1,3 @@
-// data/development.js
 const filterData = [
     {
         title: "Tags",
@@ -191,4 +190,26 @@ const yourMushroomData = {
     }
 }
 
-export {warningMessage, dummyData, mushroomData, filterData, iconImagePaths, yourMushroomData}; // Requires import {warningMessage, dummyData} from './data/development.js';
+const textColors = {
+    default: "text-[#324053]",
+}
+
+const backgroundColors = {
+    default: "bg-[#F2F2F2]", 
+    profile: "bg-[#5F464B]", 
+    dashboardHeader: "bg-[#397367]", 
+    header: "bg-[#579076]", 
+    warning: "bg-[#FF5050]", 
+    grey: "bg-[#D9D9D9]", 
+}
+
+
+
+export {
+    mushroomData, 
+    filterData, 
+    iconImagePaths, 
+    yourMushroomData, 
+    textColors, 
+    backgroundColors
+}; 
