@@ -8,7 +8,7 @@ const NagivateButton = ({name = '', destination = '', header=false}) => {
     return (
             <div className={buttonLocation}>
                 <Link href={destination} passHref>
-                    <div className="border-2 border-blue-500 flex flex-row gap-2">
+                    <div className="flex flex-row gap-2">
                         <strong className="text-sm whitespace-nowrap">{name}</strong>
                         <img src={imgSource} alt="gray arrow icon" className={imgSize}/>
                     </div>

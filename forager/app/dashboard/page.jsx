@@ -9,6 +9,7 @@ import { filterData } from '@/data/development';
 import { mushroomData } from '@/data/development';
 import { useState } from 'react';
 import ActiveFilters from '@/components/ActiveFilters';
+import BackgroundDefaultPage from '@/components/BackgroundDefaultPage';
 
 export default function DashboardPage() {
   const [filters, setFilters] = useState(filterData);
@@ -16,7 +17,8 @@ export default function DashboardPage() {
 
   return (
     <div className="flex flex-col h-screen">
-      <BackgroundScreen>
+      <BackgroundDefaultPage>
+        <BackgroundScreen>
         <UserGreeting name={"Chantelle"}/>
         <BackgroundWhiteOverlay>
           <Search filters={filters} setFilters={setFilters} setFilterMushrooms={setFilterMushrooms}/>
@@ -34,9 +36,9 @@ export default function DashboardPage() {
             />
           </div>
         </BackgroundWhiteOverlay>
-      </BackgroundScreen>
+        </BackgroundScreen>
+      </BackgroundDefaultPage>
       <NavBar />
     </div>
   );
 }
-//border-2 border-blue-500 

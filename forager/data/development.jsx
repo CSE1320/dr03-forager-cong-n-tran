@@ -41,7 +41,7 @@ const mushroomData = [
             tags: ["Poisonous", "Deadly"],
             regions: ["Europe", "North America"],
             category: "Poisonous",
-            favorites: false,
+            favorites: true,
             recent: false
         },
         details: {
@@ -158,4 +158,37 @@ const mushroomData = [
     },
 ];
 
-export {warningMessage, dummyData, mushroomData, filterData}; // Requires import {warningMessage, dummyData} from './data/development.js';
+const iconImagePaths = {
+    flip: "/icons/flip.png", 
+    album: "/icons/album.png", 
+    flash: "/icons/flash.png", 
+    cameraButton: "/icons/image_capture_icon.png"
+}
+
+const yourMushroomData = {
+    image: "/icons/your_mushroom.png",
+    title: "Your Photo", 
+    description: "This is the photo of the mushroom you just taken",
+    toxic: false,
+    scientificName: "?",
+    filters: {
+        tags: [],
+        regions: [],
+        category: "",
+        favorites: false,
+        recent: false
+    },
+    details: {
+        capShape: { name: "Cap Shape", description: "Flat" },
+        capColor: { name: "Cap Color", description: "Brown" },
+        capTexture: { name: "Cap Texture", description: "Smooth" },
+        gillTypes: { name: "Gill Types", description: "Free" },
+        gillColors: { name: "Gill Colors", description: "White" },
+        stemShape: { name: "Stem Shape", description: "Slender" },
+        stemColor: { name: "Stem Color", description: "White" },
+        stemRing: { name: "Stem Ring", description: "Absent" },
+        habitat: { name: "Habitat", description: "?" }
+    }
+}
+
+export {warningMessage, dummyData, mushroomData, filterData, iconImagePaths, yourMushroomData}; // Requires import {warningMessage, dummyData} from './data/development.js';

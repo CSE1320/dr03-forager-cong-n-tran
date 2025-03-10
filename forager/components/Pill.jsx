@@ -17,17 +17,19 @@ const Pill = ({displayName, isSelected, setFilters, setFilterMushrooms}) => {
             )
             }));
             const activeFilters = newFilters.flatMap(filter => 
-                filter.pills.filter(pill => pill.active).map(pill => pill.name)
+            filter.pills.filter(pill => pill.active).map(pill => pill.name)
             );
             console.log(activeFilters)
             if (activeFilters.length === 0) {
-                setFilterMushrooms(mushroomData);
+            setFilterMushrooms(mushroomData);
             } else {
-                setFilterMushrooms(mushroomData.filter(mushroom => 
-                    activeFilters.every(pill => 
-                        Object.values(mushroom.filters).flat().includes(pill)
-                    )
-                ));
+            setFilterMushrooms(mushroomData.filter(mushroom => 
+                activeFilters.every(pill => 
+                Object.values(mushroom.filters).flat().includes(pill) ||
+                (pill === "Favorites" && mushroom.filters.favorites) ||
+                (pill === "Recents" && mushroom.filters.recent)
+                )
+            ));
             }
             return newFilters;
         });

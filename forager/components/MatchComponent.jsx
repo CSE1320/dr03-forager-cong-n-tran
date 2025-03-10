@@ -15,7 +15,7 @@ const MatchComponent = ({percent, toxic}) => {
 
     return (
         <div className="flex flex-row items-center">
-            <div className="bg-[#FF5050] w-24 h-6 flex flex-row items-center rounded-xl gap-0.5 pl-0.5">
+            <div className="bg-[#FF5050] w-24 h-6 flex flex-row items-center rounded-sm gap-0.5 pl-0.5">
                 {matchIcon}
                 <h4 className="text-white font-bold text-left text-sm ">
                     {percent}% Match
